@@ -110,11 +110,11 @@ export const Stars = ({
                 areas={[
                     [900, 500, 500],
                     [-250, 600, -250],
-                    [-900, 800, -1000],
+                    [-900, 700, -1000],
                     // this last part is extreme to let the
                     // stars move far out of the way, so when
                     // they 'snap' back to the start, it isnt visible
-                    [3000, 800, -1500],
+                    [3000, 900, -1500],
                 ]}
                 variance={300}
                 baseSpeed={0.1}

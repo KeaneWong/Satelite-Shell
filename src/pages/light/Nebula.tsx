@@ -4,16 +4,16 @@ import SmokePNG from "../../assets/smoke.png";
 import React, {useRef} from "react";
 
 
-export const Nebula =  ({
-key,
-    ...rest
+export const Nebula = ({
+                           key,
+                           ...rest
 
-                       })=> {
+                       }) => {
 
     const tex = useLoader(TextureLoader, SmokePNG.src);
     const nebulaRef = useRef(null);
-    useFrame(()=>{
-        if (nebulaRef.current){
+    useFrame(() => {
+        if (nebulaRef.current) {
             nebulaRef.current.rotation.z -= 0.001;
         }
     })
@@ -23,7 +23,7 @@ key,
             {...rest}
             ref={nebulaRef}
         >
-            <planeGeometry args={[500,500]}/>
+            <planeGeometry args={[500, 500]}/>
             <meshLambertMaterial
                 map={tex}
                 transparent={true}

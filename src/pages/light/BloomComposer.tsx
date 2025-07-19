@@ -11,7 +11,8 @@ import {BlendFunction, KernelSize} from "postprocessing";
 export const BloomComposer = () => {
     return (
         <EffectComposer>
-            <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480}/>
+            <DepthOfField
+                focusDistance={0} focalLength={0.02} bokehScale={2} height={480}/>
             <Bloom
                 blendFunction={BlendFunction.COLOR_DODGE}
                 kernelSize={KernelSize.SMALL}

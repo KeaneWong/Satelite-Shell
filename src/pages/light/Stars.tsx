@@ -60,7 +60,7 @@ export const Stars = ({
             )
         }
         return extraStarList
-    })
+    }, [])
     return (
         <>
             {

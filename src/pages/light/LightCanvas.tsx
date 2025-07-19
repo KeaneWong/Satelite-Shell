@@ -20,9 +20,6 @@ export const LightCanvas = () => {
             // linear
         >
             <NebulaCumulus/>
-            <CloudPath
-                nebulaPosition={[400, 450, -50]}
-            />
 
 
             <perspectiveCamera

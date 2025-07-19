@@ -27,7 +27,7 @@ const Line = ({start, end}: LineProps) => {
             <lineBasicMaterial
                 attach='material'
                                color="white"
-                opacity={0.2}
+                opacity={0.3}
                 transparent
                 fog
             />

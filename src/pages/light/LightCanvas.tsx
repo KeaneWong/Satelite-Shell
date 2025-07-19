@@ -3,7 +3,8 @@ import {WorldCamera} from "./WorldCamera.tsx";
 import {NebulaCumulus} from "./NebulaCumulus.tsx";
 import {LightTrail} from "./LightTrail.tsx";
 import {Stars} from "./Stars.tsx";
-import {ConstellationLines} from "./ConstellationLines.tsx";
+import {EffectComposer} from "@react-three/postprocessing";
+import { BloomComposer } from "./BloomComposer.tsx";
 
 export const FOG_COLOR = 0x222222;
 export const LightCanvas = () => {
@@ -18,6 +19,7 @@ export const LightCanvas = () => {
             // flat
             // linear
         >
+            <BloomComposer/>
             <NebulaCumulus/>
 
             <perspectiveCamera

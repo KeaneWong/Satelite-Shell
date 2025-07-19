@@ -1,10 +1,11 @@
 export const Star = ({
-
+                         size = 1.5,
                          ...rest
+
                      }) => {
     return (
         <mesh {...rest}>
-            <icosahedronGeometry args={[2]}/>
+            <icosahedronGeometry args={[size]}/>
 
             <meshStandardMaterial
                 //yellow

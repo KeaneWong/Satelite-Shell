@@ -40,8 +40,6 @@ export const Stars = ({
                           positionY,
     offsets
                       }: StarsProps) => {
-    console.log(yFactor)
-    console.log(xFactor)
     const adjustedStarList: StarListType = useMemo(() => {
         const tempStarList = JSON.parse(JSON.stringify(starList));
         for (const [key, starr] of  Object.entries(tempStarList)) {
@@ -51,6 +49,18 @@ export const Stars = ({
         }
         return tempStarList
     }, [starList, ORIGINAL_X_SCALE, ORIGINAL_Y_SCALE, yWorldAxis, xWorldAxis]);
+    const extraStars = useMemo(()=>{
+        const extraStarList = []
+        for (let i = 0; i < 40; i++){
+            extraStarList.push(
+                [
+                    Math.random() * xWorldAxis + WORLD_LOWER_BOUND_X, //x component
+                    Math.random() * yWorldAxis + WORLD_LOWER_BOUND_Y, //z component
+                ]
+            )
+        }
+        return extraStarList
+    })
     return (
         <>
             {
@@ -93,6 +103,21 @@ export const Stars = ({
                 //         />
                 //     )
                 // })
+            }
+            {
+                extraStars.map(([x,y], index)=>{
+                    return(
+                        <Star
+                            key={String(index) + x + y}
+                            size={0.5}
+                            position={[
+                                x,
+                                positionY,
+                                y
+                            ]}
+                        />
+                )
+            })
             }
             <ConstellationLines
                 positionY={positionY}

@@ -1,10 +1,8 @@
 import {Canvas,} from "@react-three/fiber";
 import {WorldCamera} from "./WorldCamera.tsx";
 import {NebulaCumulus} from "./NebulaCumulus.tsx";
-import {LightTrail} from "./LightTrail.tsx";
 import {Stars} from "./Stars.tsx";
 import {BloomComposer} from "./BloomComposer.tsx";
-import {CloudPath} from "./CloudPath.tsx";
 
 export const FOG_COLOR = 0x222222;
 export const LightCanvas = () => {
@@ -16,8 +14,7 @@ export const LightCanvas = () => {
                 gl.setClearColor(FOG_COLOR)
                 gl.setSize(window.innerWidth, window.innerHeight);
             }}
-            // flat
-            // linear
+
         >
             <NebulaCumulus/>
 
@@ -40,38 +37,26 @@ export const LightCanvas = () => {
 
             <pointLight // voidlight
                 args={[0x7F00FF, 80000, 450, 1.6]}
-                // color={0xcc6600}
-                // intensity={50}
-                // distance={450}
-                // decay={1.7}
+
                 position={[-250, 200, -400]}
 
             />
             <pointLight // corrupted investiture
                 args={[0xD8547e, 90000, 450, 1.9]}
-                // color={0xd8547e}
-                // intensity={50}
-                // distance={450}
-                // decay={1.7}
+
                 position={[0, 200, -200]}
 
             />
             <pointLight // stormlight
                 args={[0x3677ac, 700000, 450, 1.6]}
-                // color={0x3677ac}
-                // intensity={50}
-                // distance={450}
-                // decay={1.7}
+
                 position={[250, 200, 100]}
             />
             <mesh position={[400, 450, -50]}>
                 <icosahedronGeometry args={[5]}/>
                 <meshBasicMaterial color={'red'}/>
             </mesh>
-            {/*<LightTrail*/}
-            {/*    start={[300, 200, 0]}*/}
-            {/*    end={[0, 0, 1]}*/}
-            {/*/>*/}
+
             <Stars
                 positionY={400}
                 offsets={[0, 0, -300]}

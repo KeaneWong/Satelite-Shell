@@ -13,7 +13,7 @@ export const NebulaCumulus = () => {
             clouds.push(
                 Nebula({
                     key: i,
-                position: [Math.random() * 800 - 400, 500, Math.random() * 500 - 500],
+                position: [Math.random() * 1000 - 500, 500, Math.random() * 600 - 600],
                 rotation: [1.16, -0.12, Math.random() * 2 * Math.PI],
                     // ref: (el) => nebulaRef.current[i] = el,
             }))

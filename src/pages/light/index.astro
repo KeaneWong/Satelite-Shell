@@ -1,10 +1,18 @@
 ---
-import {LightCanvas} from "./LightCanvas"
+import {SITE_DESCRIPTION, SITE_TITLE} from "../../consts";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import CosmicBackground from "../../components/CosmicBackground/CosmicBackground.astro";
 ---
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
 
-<div style="width: 100vw">
+</head>
+<body>
+<Header/>
 
-<LightCanvas client:only="react"/>
+<CosmicBackground/>
 
-    </div>
-
+</body>
+</html>

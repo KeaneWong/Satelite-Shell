@@ -5,6 +5,8 @@ import {Stars} from "./Stars.tsx";
 import {BloomComposer} from "./BloomComposer.tsx";
 
 export const FOG_COLOR = 0x222222;
+
+
 export const LightCanvas = () => {
 
 
@@ -48,14 +50,10 @@ export const LightCanvas = () => {
 
             />
             <pointLight // stormlight
-                args={[0x3677ac, 700000, 450, 1.6]}
+                args={[0x3677ac, 650000, 450, 1.7]}
 
                 position={[250, 200, 100]}
             />
-            <mesh position={[400, 450, -50]}>
-                <icosahedronGeometry args={[5]}/>
-                <meshBasicMaterial color={'red'}/>
-            </mesh>
 
             <Stars
                 positionY={400}

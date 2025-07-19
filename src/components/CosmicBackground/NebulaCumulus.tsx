@@ -1,7 +1,7 @@
 import {useFrame} from "@react-three/fiber";
 import {useEffect, useMemo, useRef} from "react";
 import {Nebula} from "./Nebula.tsx";
-
+const PARALLAX = 2
 
 export const CLOUD_NUMBER = 50;
 

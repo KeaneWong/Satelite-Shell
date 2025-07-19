@@ -1,0 +1,23 @@
+---
+
+import {LightCanvas} from "./LightCanvas";
+
+---
+    <div
+        style={{
+
+            width: '100%',
+            height: '100%',
+        }}
+    >
+        <div style={{
+            position: 'fixed',
+            width: '100%',
+            height: '100%',
+            zIndex: -100,
+        }}>
+            <LightCanvas client:only="react"/>
+
+        </div>
+         <slot/>
+    </div>

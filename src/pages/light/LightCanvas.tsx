@@ -2,8 +2,10 @@ import {Canvas,} from "@react-three/fiber";
 import {WorldCamera} from "./WorldCamera.tsx";
 import {NebulaCumulus} from "./NebulaCumulus.tsx";
 import {LightTrail} from "./LightTrail.tsx";
+import {Stars} from "./Stars.tsx";
+import {ConstellationLines} from "./ConstellationLines.tsx";
 
-export const FOG_COLOR = 0x43444E;
+export const FOG_COLOR = 0x222222;
 export const LightCanvas = () => {
 
 
@@ -71,6 +73,10 @@ export const LightCanvas = () => {
             <LightTrail
                 start={[300, 200, 0]}
                 end={[0, 0, 1]}
+            />
+            <Stars
+                positionY={400}
+                offsets={[0, 0, -300]}
             />
 
             <WorldCamera/>

@@ -5,7 +5,9 @@ import React, {useRef} from "react";
 
 
 export const Nebula =  ({
+key,
     ...rest
+
                        })=> {
 
     const tex = useLoader(TextureLoader, SmokePNG.src);
@@ -17,6 +19,7 @@ export const Nebula =  ({
     })
     return (
         <mesh
+            key={key}
             {...rest}
             ref={nebulaRef}
         >

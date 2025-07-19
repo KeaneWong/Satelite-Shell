@@ -8,10 +8,9 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import {Image} from 'astro:assets';
 import CosmicBackground from "../../components/CosmicBackground/CosmicBackground.astro";
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('projects')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
 ---
 
 <!doctype html>
@@ -115,7 +114,7 @@ const posts = (await getCollection('blog')).sort(
                 {
                     posts.map((post) => (
                             <li>
-                                <a href={`/blog/${post.id}/`}>
+                                <a href={`/projects/${post.id}/`}>
                                     {post.data.heroImage && (
                                             <Image width={720} height={360} src={post.data.heroImage} alt=""/>
                                     )}

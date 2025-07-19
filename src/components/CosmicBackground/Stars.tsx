@@ -2,7 +2,8 @@ import {starList, type StarListType, starMap, type StarType} from "./StarList.ts
 import {Star} from "./Star.tsx";
 import {ConstellationLines} from "./ConstellationLines.tsx";
 import {useMemo} from "react";
-import {transitionEnabledOnThisPage} from "astro:transitions/client";
+import {ShootingStars} from "./ShootingStars.tsx";
+import {ShootingStar} from "./ShootingStar.tsx";
 
 export interface StarsProps {
     // position: [number, number, number]
@@ -38,20 +39,20 @@ const ScaleCoords = (x: number, y: number): [number, number] => {
 
 export const Stars = ({
                           positionY,
-    offsets
+                          offsets
                       }: StarsProps) => {
     const adjustedStarList: StarListType = useMemo(() => {
         const tempStarList = JSON.parse(JSON.stringify(starList));
-        for (const [key, starr] of  Object.entries(tempStarList)) {
+        for (const [key, starr] of Object.entries(tempStarList)) {
             const adjustedxz = ScaleCoords(starr.x, starr.y)
             tempStarList[key].x = adjustedxz[0] + offsets[0]
             tempStarList[key].y = adjustedxz[1] + offsets[2]
         }
         return tempStarList
     }, [starList, ORIGINAL_X_SCALE, ORIGINAL_Y_SCALE, yWorldAxis, xWorldAxis]);
-    const extraStars = useMemo(()=>{
+    const extraStars = useMemo(() => {
         const extraStarList = []
-        for (let i = 0; i < 40; i++){
+        for (let i = 0; i < 40; i++) {
             extraStarList.push(
                 [
                     Math.random() * xWorldAxis + WORLD_LOWER_BOUND_X, //x component
@@ -64,7 +65,7 @@ export const Stars = ({
     return (
         <>
             {
-                 Object.entries(adjustedStarList).map(([key, starr]) => {
+                Object.entries(adjustedStarList).map(([key, starr]) => {
                     // const adjustedXZ = ScaleCoords(starr.x, starr.y)
                     // YEs I know it says xz while the coordinates say xy. The
                     // program is actually looking up so the plane is xz, not xy.
@@ -77,36 +78,17 @@ export const Stars = ({
                                     starr.x,
                                     positionY + offsets[1],
                                     starr.y
-                                    // adjustedXZ[0] + offsets[0],
-                                    // positionY + offsets[1],
-                                    // adjustedXZ[1] + offsets[2],
+
                                 ]
                             }
                         />
                     )
                 })
-                // Object.entries(starList).map(([key, starr]) => {
-                //     const adjustedXZ = ScaleCoords(starr.x, starr.y)
-                //     // YEs I know it says xz while the coordinates say xy. The
-                //     // program is actually looking up so the plane is xz, not xy.
-                //     // Apologies to future keane/maintainers.
-                //     return (
-                //         <Star
-                //             key={key}
-                //             position={
-                //                 [
-                //                     adjustedXZ[0] + offsets[0],
-                //                     positionY + offsets[1],
-                //                     adjustedXZ[1] + offsets[2],
-                //                 ]
-                //             }
-                //         />
-                //     )
-                // })
+
             }
             {
-                extraStars.map(([x,y], index)=>{
-                    return(
+                extraStars.map(([x, y], index) => {
+                    return (
                         <Star
                             key={String(index) + x + y}
                             size={0.5}
@@ -116,12 +98,28 @@ export const Stars = ({
                                 y
                             ]}
                         />
-                )
-            })
+                    )
+                })
             }
             <ConstellationLines
                 positionY={positionY}
                 adjustedStarList={adjustedStarList}
+            />
+            <ShootingStars
+                count={10}
+                areas={[
+                    [900, 500, 500],
+                    [-250, 600, -250],
+                    [-900, 800, -1000],
+                    // this last part is extreme to let the
+                    // stars move far out of the way, so when
+                    // they 'snap' back to the start, it isnt visible
+                    [3000, 800, -1500],
+                ]}
+                variance={300}
+                baseSpeed={0.1}
+                speedVariance={0.05}
+                delayVariance={7}
             />
 
 

@@ -3,6 +3,7 @@ import {WorldCamera} from "./WorldCamera.tsx";
 import {NebulaCumulus} from "./NebulaCumulus.tsx";
 import {Stars} from "./Stars.tsx";
 import {BloomComposer} from "./BloomComposer.tsx";
+import {OrbitControls} from "@react-three/drei";
 
 export const FOG_COLOR = 0x222222;
 
@@ -20,7 +21,6 @@ export const LightCanvas = () => {
         >
             <NebulaCumulus/>
 
-
             <perspectiveCamera
                 makeDefault
                 args={[
@@ -36,6 +36,7 @@ export const LightCanvas = () => {
                 color={0xff8c19}
                 position={[0, 0, 1]}
             />
+            {/*<OrbitControls/>*/}
 
             <pointLight // voidlight
                 args={[0x7F00FF, 80000, 450, 1.6]}

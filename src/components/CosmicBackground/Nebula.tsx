@@ -4,17 +4,25 @@ import SmokePNG from "../../assets/smoke.png";
 import React, {useRef} from "react";
 
 
+
+
 export const Nebula = ({
                            key,
+    rotateSpeedModifier,
                            ...rest
 
-                       }) => {
+                       }:{
+    key: string,
+    rotateSpeedModifier: number,
+
+} ) => {
 
     const tex = useLoader(TextureLoader, SmokePNG.src);
     const nebulaRef = useRef(null);
+
     useFrame(() => {
         if (nebulaRef.current) {
-            nebulaRef.current.rotation.z -= 0.001;
+            nebulaRef.current.rotation.z -= (0.002 + rotateSpeedModifier);
         }
     })
     return (

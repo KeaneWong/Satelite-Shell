@@ -7,7 +7,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://KeaneWong.com/satellite-shell',
-    // base: "satellite-shell",
+    // site: 'https://KeaneWong.com/satellite-shell',
+    base: "satellite-shell",
     integrations: [mdx(), sitemap(), react()],
 });

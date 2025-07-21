@@ -1,0 +1,61 @@
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.person {
+    --transform-speed: 200ms;
+    position: relative;
+    max-width: 20rem;
+    margin-inline: auto;
+
+}
+
+.person__container {
+    aspect-ratio: 1/1.35;
+    display: grid;
+    align-items: end;
+    /*
+    ProTip: This creates a perfect long D shape
+    that makes it easy to create an assymmetrically
+    clipped portrait. Top is not clipped. Credit
+    to Kevin Powell.
+    */
+    border-radius: 0 0 100vw 100vw;
+    overflow: hidden;
+    transition: transform var(--transform-speed) ease-in;
+
+}
+
+.person__container:hover {
+    transform: scale(1.1);
+
+
+}
+
+.person__circle {
+    position: absolute;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    inset: auto 0 0;
+    margin-inline: auto;
+    border-radius: 50%;
+
+}
+
+.person__img {
+    position: relative;
+    z-index: 2;
+    transition: transform var(--transform-speed) ease-in-out;
+    transform:
+            translateY(3rem)
+    scale(0.9)
+;
+
+}
+
+.person__container:hover .person__img {
+    transform: translateY(2rem)
+    scale(0.9);
+}

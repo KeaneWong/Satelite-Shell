@@ -47,6 +47,9 @@ const posts = (await getCollection('projects')).sort(
         }
 
         ul li:first-child img {
+            //width: 100%;
+            aspect-ratio:  16 / 9;
+            object-fit: cover;
             width: 100%;
         }
 

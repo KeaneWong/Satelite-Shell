@@ -114,7 +114,7 @@ const posts = (await getCollection('stormlight')).sort(
                 {
                     posts.map((post) => (
                             <li>
-                                <a href={`/stormlight/${post.id}/`}>
+                                <a href={`/satellite-shell/stormlight/${post.id}/`}>
                                     {post.data.heroImage && (
                                             <Image width={720} height={360} src={post.data.heroImage} alt=""/>
                                     )}

@@ -13,6 +13,5 @@ export default defineConfig({
     integrations: [mdx(), sitemap(), react()],
     build: {
         assets: 'assets'
-    },
-    output: "static"
+    }
 });

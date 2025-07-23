@@ -13,5 +13,10 @@ export default defineConfig({
     integrations: [mdx(), sitemap(), react()],
     build: {
         assets: 'assets'
-    }
+    },
+    // image: {
+    //     service: {
+    //         entrypoint: 'astro/assets/services/noop'
+    //     }
+    // }
 });

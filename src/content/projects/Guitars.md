@@ -79,7 +79,7 @@ with the thing, and no worse for wear (at least no more
 than there was already.)
 
 #### Hades Guitar
-![Hades Guitar](HadesGuitar.PNG "Hades Guitar")
+![Hades Guitar](HadesGuitar.png "Hades Guitar")
 
 This one is modeled after [Hades](https://store.steampowered.com/app/1145360/Hades/)
 if you're familiar, and specifically takes influence from

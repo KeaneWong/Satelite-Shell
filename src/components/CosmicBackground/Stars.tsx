@@ -3,7 +3,7 @@ import {Star} from "./Star.tsx";
 import {ConstellationLines} from "./ConstellationLines.tsx";
 import {useMemo} from "react";
 import {ShootingStars} from "./ShootingStars.tsx";
-import {ShootingStar} from "./ShootingStar.tsx";
+import {Stars as StarField} from "@react-three/drei"
 
 export interface StarsProps {
     // position: [number, number, number]
@@ -86,21 +86,21 @@ export const Stars = ({
                 })
 
             }
-            {
-                extraStars.map(([x, y], index) => {
-                    return (
-                        <Star
-                            key={String(index) + x + y}
-                            size={0.5}
-                            position={[
-                                x,
-                                positionY,
-                                y
-                            ]}
-                        />
-                    )
-                })
-            }
+            {/*{*/}
+            {/*    extraStars.map(([x, y], index) => {*/}
+            {/*        return (*/}
+            {/*            <Star*/}
+            {/*                key={String(index) + x + y}*/}
+            {/*                size={0.5}*/}
+            {/*                position={[*/}
+            {/*                    x,*/}
+            {/*                    positionY,*/}
+            {/*                    y*/}
+            {/*                ]}*/}
+            {/*            />*/}
+            {/*        )*/}
+            {/*    })*/}
+            {/*}*/}
             <ConstellationLines
                 positionY={positionY}
                 adjustedStarList={adjustedStarList}
@@ -121,7 +121,7 @@ export const Stars = ({
                 speedVariance={0.05}
                 delayVariance={7}
             />
-
+            <StarField radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1}/>
 
         </>
     )

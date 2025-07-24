@@ -51,7 +51,7 @@ export const LightCanvas = () => {
 
             />
             <pointLight // stormlight
-                args={[0x3677ac, 650000, 450, 1.7]}
+                args={[0x3677ac, 450000, 450, 1.7]}
 
                 position={[250, 200, 100]}
             />

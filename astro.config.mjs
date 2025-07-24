@@ -11,12 +11,5 @@ export default defineConfig({
     base: "/satellite-shell",
     trailingSlash: "ignore",
     integrations: [mdx(), sitemap(), react()],
-    build: {
-        assets: 'assets'
-    },
-    image: {
-        service: {
-            entrypoint: 'astro/assets/services/sharp',
-        }
-    }
+
 });

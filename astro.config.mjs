@@ -8,10 +8,10 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
     site: "https://KeaneWong.com",
-    base: "/satellite-shell",
+    base: "/Satellite-Shell",
     trailingSlash: "ignore",
     integrations: [mdx(), sitemap(), react()],
-    // base: process.env.NODE_ENV === 'production' ? "/satellite-shell" : "/",
+    // base: process.env.NODE_ENV === 'production' ? "/Satellite-Shell" : "/",
     output: 'static',
     outDir: './dist'
 });

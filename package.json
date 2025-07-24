@@ -2,7 +2,7 @@
   "name": "satellite-shell",
   "type": "module",
   "version": "0.0.1",
-  "build:gh-page": "astro check && astro build --base=/satellite-shell/",
+  "build:gh-page": "astro check && astro build --base=/Satellite-Shell/",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

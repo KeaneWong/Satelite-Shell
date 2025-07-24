@@ -16,7 +16,7 @@ export default defineConfig({
     },
     image: {
         service: {
-            entrypoint: 'astro/assets/services/noop',
+            entrypoint: 'astro/assets/services/sharp',
         }
     }
 });

@@ -7,13 +7,13 @@ import KeaneWong from "../assets/Portrait.png"
 <header>
 
     <nav>
-        <h2><a href="/Satellite-Shell">{SITE_TITLE}</a></h2>
+        <h2><a href=`${import.meta.env.BASE_URL}`>{SITE_TITLE}</a></h2>
         <div class="internal-links">
-            <HeaderLink href="/Satellite-Shell">Home</HeaderLink>
-            <!--<HeaderLink href="/Satellite-Shell/blog">Blog</HeaderLink>-->
-            <HeaderLink href="/Satellite-Shell/projects">Projects</HeaderLink>
-            <HeaderLink href="/Satellite-Shell/stormlight">Stormlight Progress</HeaderLink>
-            <HeaderLink href="/Satellite-Shell/about">About</HeaderLink>
+            <HeaderLink href=`${import.meta.env.BASE_URL}`>Home</HeaderLink>
+            <!--<HeaderLink href=`${import.meta.env.BASE_URL}/blog`>Blog</HeaderLink>-->
+            <HeaderLink href=`${import.meta.env.BASE_URL}/projects`>Projects</HeaderLink>
+            <HeaderLink href=`${import.meta.env.BASE_URL}/stormlight`>Stormlight Updates</HeaderLink>
+            <HeaderLink href=`${import.meta.env.BASE_URL}/about`>About</HeaderLink>
         </div>
         <div class="social-links">
             <a href="https://KeaneWong.com" target="_blank">

@@ -1,0 +1,104 @@
+---
+title: 'Implementing the Surge of Abrasion (Pt.1)'
+description: "A.K.A Passive effects aren't rad"
+pubDate: 'Aug 04 2025'
+heroImage: '2025/abrasion_hero_image.png'
+---
+import AbrasionDemo0 from "./2025/abrasion_movement_demo_0.webm"
+import AbrasionDemo1 from "./2025/abrasion_movement_demo_1.webm"
+
+The surge of Abrasion in Stormlight always looked kinda 
+lame to me (bear with me) up until I started working on 
+this game. It's not the Surge's fault; it just seems that 
+some of the powers look vastly outclassed by some of the
+other Surges.
+
+The books even kinda touch on this in TWoK, where in the
+Chasms, we're being told the Radiants can fly, run on
+walls, heal sickness, etc. and Kaladin just says "Wait,
+if the Radiants could fly why would they be sticking to 
+walls or running fast?" Why apply magic oil slick and
+skate at wild speeds when you can literally pick yourself
+off the ground and fly far, far away?
+
+I think this is vastly influenced by the fact that
+Abrasion is not very well explored and Gravitation has 
+been at the forefront of the series since the beginning
+because of Kaladin so its not a fair comparison since we
+just haven't seen the Abrasion-using Radiant orders in 
+the spotlight yet.
+
+Unfortunately, my video game cannot wait 4 years 
+for Lift's viewpoint book to release to see Abrasion 
+expanded on. So I once again allow myself to possibly
+blasphemy the source material by introducing my own 
+interpretations of the powers, and take some liberties with
+it. 
+
+Unlike Progression which has been lovingly mangled into
+an RPG-esque buff system, Abrasion I think is much closer
+to what the Sanderson intended. Gravitation is going to be 
+clear to me; flight, wall running, throwing objects, etc.
+
+So, to make Abrasion distinct, it needs some things that
+are **strict** advantages, such as:
+
+1. Faster movement through elimination of air resistance
+2. Snappier movement from increases of friction
+3. Better dodging, as you 'slick' away from enemy attacks
+
+And yeah, take that Gravitation, you starving overrated 
+main character power set. You may have cinematic appeal
+and a more useful utility in Roshar, but in my game you
+get something way better: Frame data.
+
+But, the problem is that it's a bit of a boring power set.
+Most of this is very easy to implement in game as numerical
+tweaks; Increase movement speed, reduce lag on direction
+changes, increase invincibility frames on the dodge and 
+parry mechanic, etc. It would still be interactive, but 
+it's not visually exciting.
+
+Luckily, we can make it a bit cooler to look at.
+
+At the beginning of the project, I put together an after
+image script based off [this post](https://www.reddit.com/r/Unity2D/comments/scjxbu/after_image_effect_for_animated_sprites/).
+I slightly tweaked it to make it work recursively with all
+sprite renderers in the game object's children and disables
+all associated scripts other than the sprite renderers before
+instantiating the images (and increasing transparency).
+
+So, in addition to the tweaks I made above, I added 
+after images to the dash, adjusted the running
+animations, and added a custom 'friction' protocol that 
+reduces speed more gradually when stopping.
+
+Here's a comparison normal movement:
+
+<video controls={false} loop width="75%" muted autoplay alt="Regular Movement">
+<source src={AbrasionDemo0} type="video/mp4"  ></source>
+</video>
+
+And here's a comparison with the Abrasion movement:
+
+<video controls={false} loop width="75%" muted autoplay alt="Abrasion Movement">
+<source src={AbrasionDemo1} type="video/mp4"  ></source>
+</video>
+
+So it's not actually that much faster, but it definitely
+_feels_ faster and for a proof of concept I'm happy with 
+how it looks for now. 
+<br/>The next step now is to add some other functions;
+Abrasion might be able to
+1. Let you wall climb
+2. Increase air resistance and prevent fall damage
+3. Trip enemies
+
+Whether any of this is relevant, we'll see on how the
+game turns out. 
+
+Until next time, I'll leave it like this.
+
+Some TODOs for next time:
+1. Add wall running
+2. Adjust air speed and acceleration

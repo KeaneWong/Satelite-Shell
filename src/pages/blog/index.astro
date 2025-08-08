@@ -49,6 +49,8 @@ const posts = (await getCollection('blog')).sort(
 
         ul li:first-child img {
             width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
         }
 
         ul li:first-child .title {
@@ -58,6 +60,8 @@ const posts = (await getCollection('blog')).sort(
         ul li img {
             margin-bottom: 0.5rem;
             border-radius: 12px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
         }
 
         ul li a {
